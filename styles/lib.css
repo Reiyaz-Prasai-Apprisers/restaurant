@@ -1,0 +1,149 @@
+.input-field {
+  outline: none;
+  border: 1px solid #c1c1c1a1;
+  color: inherit;
+  text-shadow: inherit;
+  padding: 0.4rem;
+  border-radius: inherit;
+  position: relative;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.input-field:focus {
+  text-shadow: none;
+  box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+  box-shadow: var(--primary-color) 0px 0px 5px 0px,
+    var(--primary-color) 0px 0px 1px 0px;
+}
+
+.input-field:hover {
+  text-shadow: none;
+  box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+}
+
+.input-field-label {
+    position: absolute;
+    background: inherit;
+    left: 15px;
+    top: 2px;
+    color: inherit;
+  }
+
+.wrapper:focus-within {
+  color: var(--primary-color);
+}
+
+.wrapper {
+  font-size: calc(10px + 0.3vw);
+  padding: 1.7rem 0.8rem;
+  position: relative;
+  border-radius: 4px;
+  margin: 6px;
+}
+
+.validation-message {
+  color: var(--danger);
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+  height: 16px;
+  width: 82%;
+}
+
+.invalid .validation-message {
+  transform: translateY(22px);
+  transition: 200ms linear;
+}
+
+.invalid {
+  color: var(--danger);
+}
+
+.invalid .input-field {
+  border-color: var(--danger);
+
+  animation: shake 150ms;
+}
+
+.invalid:has(.input-field:focus)
+  :is(.input-field, .input-field-label, .validation-message) {
+  border-color: var(--warning);  
+  color: var(--warning);
+}
+
+.invalid:has(.input-field:focus)
+  :is(.input-field) {
+    box-shadow: var(--warning) 0px 0px 5px 0px,
+    var(--warning) 0px 0px 1px 0px;
+}
+
+.success {
+  color: var(--success);
+}
+
+.success .input-field {
+  border-color: var(--success);
+}
+
+.success:has(.input-field:focus)
+  :is(.input-field, .input-field-label, .validation-message) {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.success:has(.input-field:focus)
+  :is(.input-field) {
+    box-shadow: var(--success) 0px 0px 5px 0px,
+    var(--success) 0px 0px 1px 0px;
+}
+
+/* width */
+
+.validation-message::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+
+.validation-message::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px #cacaca;
+  border-radius: 10px;
+}
+
+/* Handle */
+
+.validation-message::-webkit-scrollbar-thumb {
+  background: #aeaeae;
+
+  height: 8px;
+
+  width: 8px;
+
+  border-radius: 50%;
+}
+
+/* Handle on hover */
+
+.validation-message::-webkit-scrollbar-thumb:hover {
+  background: #747474;
+}
+
+@keyframes shake {
+  0%,
+  40%,
+  80% {
+    transform: translateX(-5px);
+    rotate: 4deg;
+  }
+  20%,
+  60%,
+  100% {
+    transform: translateX(6px);
+
+    rotate: -4deg;
+  }
+}

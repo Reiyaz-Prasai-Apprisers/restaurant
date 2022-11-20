@@ -1,0 +1,6 @@
+.required {
+  position: absolute;
+  color: var(--danger);
+}
+
+

@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+    justify-content:flex-start;
+    padding: 6px;
+}
+
+.col{
+    position: relative;
+    display: block;
+}

@@ -1,0 +1,58 @@
+.inputField {
+  outline: none;
+  border: 1px solid #c1c1c1a1;
+  color: inherit;
+  text-shadow: inherit;
+  padding: 0.4rem;
+  border-radius: inherit;
+  position: relative;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.inputField:focus {
+  text-shadow: none;
+  box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+  box-shadow: var(--primary-color) 0px 0px 5px 0px,
+    var(--primary-color) 0px 0px 1px 0px;
+}
+
+.inputField:hover {
+  text-shadow: none;
+  box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+}
+
+.wrapper:focus-within {
+  color: var(--primary-color);
+}
+
+.wrapper {
+  font-size: calc(10px + 0.3vw);
+  padding: 1.7rem 0.8rem;
+  position: relative;
+  border-radius: 4px;
+  margin: 6px;
+}
+
+.validation-message {
+  color: var(--danger);
+  position: absolute;
+  left: 25px;
+  bottom: 30px;
+  z-index: 1;
+  overflow: auto;
+  height: 16px;
+  width: 82%;
+}
+
+.invalid .validation-message {
+  transform: translateY(22px);
+  transition: 200ms linear;
+}
+
+.invalid {
+  color: var(--danger);
+}

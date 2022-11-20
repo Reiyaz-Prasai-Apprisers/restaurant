@@ -1,0 +1,45 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "workspaces": [
+    "lib",
+    "hooks",
+    "store"
+  ],
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@types/react-redux": "^7.1.24",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.3",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
+    "typescript": "4.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReiyazP/restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReiyazP/restaurant/issues"
+  },
+  "homepage": "https://github.com/ReiyazP/restaurant#readme"
+}
