@@ -48,7 +48,7 @@ const Input = (props: any) => {
   const value = props.store.getState(props.name);
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.value = value || initialValue || "";
+      inputRef.current.value = initialValue || value || "";
     }
   }, [inputRef, value, initialValue]);
 

@@ -1,6 +1,12 @@
 import { current } from "@reduxjs/toolkit";
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import formStore from "./store";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
+import CreateStore from "./store";
 
 const Form: React.FC<any> = ({ children, form }: any) => {
   let formRef = useRef<HTMLFormElement>(null);
@@ -31,7 +37,7 @@ const Form: React.FC<any> = ({ children, form }: any) => {
           // @ts-ignore
           child.lastElementChild.value;
       });
-
+      form.setFormRef(formRef);
       form.setState instanceof Function && form.setState(values);
     }
   }, [formRef, form]);
@@ -39,11 +45,12 @@ const Form: React.FC<any> = ({ children, form }: any) => {
   return <form ref={formRef}>{getChildrenWithProps(children)}</form>;
 };
 
-export const useForm = () => {
-  let [state, setState] = useState<any>(formStore);
+export const useForm = (initialValues = {}) => {
+  const store = useMemo(() => new CreateStore(initialValues), [initialValues]);
+  let [state, setState] = useState<any>(store);
   useEffect(() => {
-    formStore.subscribe(setState);
-  }, []);
+    store.subscribe(setState);
+  }, [store]);
 
   return { form: state };
 };
